@@ -1,4 +1,4 @@
-# This Landing Page is buil with the use of HTMl AND CSS
+# This Landing Page is build with the use of HTMl AND CSS
 
 ## Features
 
