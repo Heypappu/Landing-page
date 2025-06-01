@@ -1,4 +1,4 @@
-/* General Reset */
+/* ===== General Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +9,10 @@
 body {
   line-height: 1.6;
   background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
   background: #333;
   color: #fff;
@@ -19,36 +20,36 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  flex-wrap: wrap;
 }
 
 .logo img {
-  height: 90px; 
+  height: 90px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
 
 .nav-links a {
   color: #fff;
-  margin-left: 1rem;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
   background: url('hero.webp') no-repeat center center/cover;
   color: #fff;
   padding: 6rem 2rem;
   text-align: center;
+  min-height: 90vh;
   position: relative;
-  min-height: 90vh; /* makes the hero section cover most of the screen */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +59,7 @@ header {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for text visibility */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -67,7 +68,6 @@ header {
   z-index: 2;
   max-width: 800px;
 }
-
 
 .hero-content h1 {
   font-size: 2.5rem;
@@ -86,19 +86,20 @@ header {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
   background: #f4f4f4;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   background: #222;
   color: #ccc;
   text-align: center;
   padding: 1rem;
-  
+  font-size: 0.95rem;
 }
 
 footer a {
@@ -111,21 +112,27 @@ footer a:hover {
   color: #fff;
 }
 
-/* Responsive Navigation */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 60px;
   }
 
   .nav-links {
-    display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 1rem;
   }
 
   .nav-links a {
     margin: 0.5rem 0;
+    font-size: 1rem;
   }
 
   .hero-content h1 {
@@ -134,5 +141,39 @@ footer a:hover {
 
   .hero-content p {
     font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 4rem 1rem;
+    min-height: 70vh;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }
